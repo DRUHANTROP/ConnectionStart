@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConnect", "TestConnect\TestConnect.csproj", "{013D59A2-5B8F-4FD2-80C7-481BADE3F891}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainForm", "MainForm\MainForm.csproj", "{89DA0305-13A8-4CBB-BCF6-16CC747EE769}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{013D59A2-5B8F-4FD2-80C7-481BADE3F891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013D59A2-5B8F-4FD2-80C7-481BADE3F891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013D59A2-5B8F-4FD2-80C7-481BADE3F891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DA0305-13A8-4CBB-BCF6-16CC747EE769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DA0305-13A8-4CBB-BCF6-16CC747EE769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DA0305-13A8-4CBB-BCF6-16CC747EE769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DA0305-13A8-4CBB-BCF6-16CC747EE769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA9EC66-D1A9-4E96-8446-628CBAD15FB4}
+	EndGlobalSection
+EndGlobal
