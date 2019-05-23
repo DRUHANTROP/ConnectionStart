@@ -6,11 +6,16 @@ using System.Text;
 
 namespace TestConnect
 {
-    public class JsonAssemblyInitializer : AssemblyInitializerBase
+    public class MeGonnaBeRandomAssemblyInitializer : AssemblyInitializerBase
     {
-        public JsonAssemblyInitializer()
+        private static bool isInitied = false;
+        public MeGonnaBeRandomAssemblyInitializer()
         {
-            RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom));
+            if(!isInitied)
+            {
+                isInitied = true;
+                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom), "Генератор случайных величин");
+            }
         }
     }
 }

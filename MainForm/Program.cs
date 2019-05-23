@@ -25,7 +25,7 @@ namespace MainForm
             
             using (Report report = new Report())
             {
-                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom),"Генератор случайных величин");
+                new MeGonnaBeRandomAssemblyInitializer();
                 report.Design();
                 
             }

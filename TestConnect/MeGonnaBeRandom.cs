@@ -15,7 +15,7 @@ namespace TestConnect
     {
         public override string QuoteIdentifier(string value, DbConnection connection)
         {
-            return value+connection;
+            return "\"" + value + "\"";
         }
         public override ConnectionEditorBase GetEditor()
         {
