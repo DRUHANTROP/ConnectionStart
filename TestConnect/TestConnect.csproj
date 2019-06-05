@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JsonAssemblyInitializer.cs" />
+    <Compile Include="MeGonnaBeRandomAssemblyInitializer.cs" />
     <Compile Include="MeGonnaBeRandom.cs">
       <SubType>Component</SubType>
     </Compile>

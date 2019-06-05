@@ -11,11 +11,12 @@ namespace TestConnect
         private static bool isInitied = false;
         public MeGonnaBeRandomAssemblyInitializer()
         {
-            if(!isInitied)
+            if (!isInitied)
             {
                 isInitied = true;
-                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom), "Генератор случайных величин");
+                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom));
             }
         }
+
     }
 }
