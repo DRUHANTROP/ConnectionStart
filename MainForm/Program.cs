@@ -22,13 +22,14 @@ namespace MainForm
 
             Config.DesignerSettings.ShowInTaskbar = true;
             Config.SplashScreenEnabled = true;
-            
+
             using (Report report = new Report())
             {
-                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom),"Генератор случайных величин");
+                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom), "Генератор случайных величин");
                 report.Design();
-                
+
             }
+
         }
     }
 }
