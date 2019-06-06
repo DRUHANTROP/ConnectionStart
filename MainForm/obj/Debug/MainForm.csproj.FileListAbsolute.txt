@@ -1,0 +1,11 @@
+C:\Users\lagra\source\repos\TestConnect\MainForm\bin\Debug\MainForm.exe
+C:\Users\lagra\source\repos\TestConnect\MainForm\bin\Debug\MainForm.pdb
+C:\Users\lagra\source\repos\TestConnect\MainForm\bin\Debug\TestConnect.dll
+C:\Users\lagra\source\repos\TestConnect\MainForm\bin\Debug\TestConnect.pdb
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.csprojAssemblyReference.cache
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.Properties.Resources.resources
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.csproj.GenerateResource.cache
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.csproj.CoreCompileInputs.cache
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.csproj.CopyComplete
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.exe
+C:\Users\lagra\source\repos\TestConnect\MainForm\obj\Debug\MainForm.pdb

@@ -46,18 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MeGonnaBeRandomAssemblyInitializer.cs" />
+    <Compile Include="DateGenerator.cs" />
+    <Compile Include="FirstNameGenerator.cs" />
+    <Compile Include="FullNameGenerator.cs" />
+    <Compile Include="GenCreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenCreateForm.Designer.cs">
+      <DependentUpon>GenCreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IntGenerator.cs" />
+    <Compile Include="IRandomGenerator.cs" />
+    <Compile Include="JsonAssemblyInitializer.cs" />
+    <Compile Include="LastNameGenerator.cs" />
     <Compile Include="MeGonnaBeRandom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MixedGenerator.cs" />
     <Compile Include="NameConnectionEditor.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PluginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PluginForm.Designer.cs">
+      <DependentUpon>PluginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GenCreateForm.resx">
+      <DependentUpon>GenCreateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NameConnectionEditor.resx">
       <DependentUpon>NameConnectionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PluginForm.resx">
+      <DependentUpon>PluginForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
