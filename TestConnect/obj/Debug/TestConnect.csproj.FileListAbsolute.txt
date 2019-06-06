@@ -1,0 +1,11 @@
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\TestConnect.dll
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\TestConnect.pdb
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\FastReport.dll
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\FastReport.Bars.dll
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\FastReport.Editor.dll
+C:\Users\lagra\source\repos\TestConnect\TestConnect\bin\Debug\FastReport.xml
+C:\Users\lagra\source\repos\TestConnect\TestConnect\obj\Debug\TestConnect.csprojAssemblyReference.cache
+C:\Users\lagra\source\repos\TestConnect\TestConnect\obj\Debug\TestConnect.csproj.CoreCompileInputs.cache
+C:\Users\lagra\source\repos\TestConnect\TestConnect\obj\Debug\TestConnect.csproj.CopyComplete
+C:\Users\lagra\source\repos\TestConnect\TestConnect\obj\Debug\TestConnect.dll
+C:\Users\lagra\source\repos\TestConnect\TestConnect\obj\Debug\TestConnect.pdb

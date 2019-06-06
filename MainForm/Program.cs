@@ -3,7 +3,6 @@ using FastReport.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 using TestConnect;
 
@@ -23,16 +22,14 @@ namespace MainForm
 
             Config.DesignerSettings.ShowInTaskbar = true;
             Config.SplashScreenEnabled = true;
-            
+
             using (Report report = new Report())
             {
-             new MeGonnaBeRandomAssemblyInitializer();
-            // report.Design();
-                
+                RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom), "Генератор случайных величин");
+                report.Design();
+
             }
-           EditorForm editorForm = new EditorForm();
-            editorForm.ShowDialog();
-            
+
         }
     }
 }

@@ -13,24 +13,13 @@ namespace TestConnect
 {
     public partial class MeGonnaBeRandom : DataConnectionBase
     {
-        
-        public MeGonnaBeRandom()
-        {
-            IsSqlBased = false;
-        }
-
         public override string QuoteIdentifier(string value, DbConnection connection)
         {
-            return "\"" + value + "\"";
+            return value+connection;
         }
         public override ConnectionEditorBase GetEditor()
         {
             return new NameConnectionEditor();
-        }
-
-        public override string GetConnectionId()
-        {
-            return "Random values";
         }
     }
 }
