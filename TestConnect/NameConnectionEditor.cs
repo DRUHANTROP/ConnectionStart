@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using FastReport.Data.ConnectionEditors;
 using RandomicGenerator;
 using System;
@@ -22,27 +21,27 @@ namespace TestConnect
             InitializeComponent();
             Localize();
         }
-        protected override string GetConnectionString()
-        {
-            string connectionString = "";
-            XmlSerializer formatter = new XmlSerializer(typeof(object));
-            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
-            {
-               // generatorsLB.Items.Clear();
-                generators = (List<IRandomGenerator>)formatter.Deserialize(fs);
-                generatorsLB.Items.Add((List<IRandomGenerator>)formatter.Deserialize(fs));
-               // connectionString;
-            }
-            return connectionString;
-        }
-        protected override void SetConnectionString(string value)
-        {
-            XmlSerializer formatter = new XmlSerializer(typeof(object));
-            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
-            {
-                    formatter.Serialize(fs, generators);              
-            }
-        }
+        //protected override string GetConnectionString()
+        //{
+        //    string connectionString = "";
+        //    XmlSerializer formatter = new XmlSerializer(typeof(object));
+        //    using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+        //    {
+        //       // generatorsLB.Items.Clear();
+        //        generators = (List<IRandomGenerator>)formatter.Deserialize(fs);
+        //        generatorsLB.Items.Add((List<IRandomGenerator>)formatter.Deserialize(fs));
+        //       // connectionString;
+        //    }
+        //    return connectionString;
+        //}
+        //protected override void SetConnectionString(string value)
+        //{
+        //    XmlSerializer formatter = new XmlSerializer(typeof(object));
+        //    using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+        //    {
+        //            formatter.Serialize(fs, generators);              
+        //    }
+        //}
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -155,55 +154,4 @@ namespace TestConnect
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
     }
-=======
-﻿using FastReport.Data.ConnectionEditors;
-using System.Text;
-namespace TestConnect
-{
-    internal class NameConnectionEditor : ConnectionEditorBase
-    {
-        private System.Windows.Forms.Button button1;
-
-        private void Localize()
-        {
-
-        }
-        protected override string GetConnectionString()
-        {
-            StringBuilder builder = new StringBuilder();
-            
-            return builder.ToString();
-        }
-
-        private void InitializeComponent()
-        {
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(129, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // NameConnectionEditor
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.Controls.Add(this.button1);
-            this.Name = "NameConnectionEditor";
-            this.ResumeLayout(false);
-
-        }
-
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            PluginForm pf = new PluginForm();
-            pf.ShowDialog();
-        }
     }
->>>>>>> 0c7653ce58b613fb77733e43695e44721ddfed95
-}
