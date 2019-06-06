@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RandomicGenerator
 {
+    [Serializable]
     class IntGenerator:IRandomGenerator
     {
         private Random rnd = new Random(DateTime.Now.Millisecond);

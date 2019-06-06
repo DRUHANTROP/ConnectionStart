@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RandomicGenerator
 {
+    [Serializable]
     class MixedGenerator : IRandomGenerator
     {
         IRandomGenerator[] generators = { new IntGenerator(), new FirstNameGenerator(), new LastNameGenerator(), new FullNameGenerator(), new DateGenerator() };

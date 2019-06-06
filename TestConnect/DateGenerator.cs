@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RandomicGenerator
 {
+    [Serializable]
     class DateGenerator : IRandomGenerator
     {
         Random r = new Random();

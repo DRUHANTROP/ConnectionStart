@@ -6,6 +6,7 @@ using System.Threading;
 
 namespace RandomicGenerator
 {
+    [Serializable]
     class LastNameGenerator : IRandomGenerator
     {
         private Random r = new Random(DateTime.Now.Millisecond);

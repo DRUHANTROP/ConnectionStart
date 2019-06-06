@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RandomicGenerator
 {
-    interface IRandomGenerator
+
+    public interface IRandomGenerator
     {
         string Name { get; set; }
         ///<summary>
