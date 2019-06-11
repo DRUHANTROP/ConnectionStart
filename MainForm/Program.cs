@@ -1,14 +1,12 @@
 using FastReport;
 using FastReport.Utils;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 using TestConnect;
 
 namespace MainForm
 {
-     class Program
+    class Program
     {
 
         /// <summary>

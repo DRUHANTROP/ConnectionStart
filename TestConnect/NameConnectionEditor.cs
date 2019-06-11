@@ -34,7 +34,7 @@ namespace TestConnect
         }
         protected override void SetConnectionString(string value)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator[]));
+            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator));
             using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
             {
                 try
