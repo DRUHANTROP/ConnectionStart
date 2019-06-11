@@ -21,27 +21,38 @@ namespace TestConnect
             InitializeComponent();
             Localize();
         }
-        //protected override string GetConnectionString()
-        //{
-        //    string connectionString = "";
-        //    XmlSerializer formatter = new XmlSerializer(typeof(object));
-        //    using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
-        //    {
-        //       // generatorsLB.Items.Clear();
-        //        generators = (List<IRandomGenerator>)formatter.Deserialize(fs);
-        //        generatorsLB.Items.Add((List<IRandomGenerator>)formatter.Deserialize(fs));
-        //       // connectionString;
-        //    }
-        //    return connectionString;
-        //}
-        //protected override void SetConnectionString(string value)
-        //{
-        //    XmlSerializer formatter = new XmlSerializer(typeof(object));
-        //    using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
-        //    {
-        //            formatter.Serialize(fs, generators);              
-        //    }
-        //}
+        protected override string GetConnectionString()
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator[]));
+            generatorsLB.Items.Clear();
+            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+            {
+                formatter.Serialize(fs, generators.ToArray());
+                // connectionString;
+            }
+            return "generators.xml";
+        }
+        protected override void SetConnectionString(string value)
+        {
+            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator[]));
+            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+            {
+                try
+                {
+                    generators = new List<IRandomGenerator>(formatter.Deserialize(fs) as IRandomGenerator[]);
+                }
+                catch
+                {
+                    generators = new List<IRandomGenerator>();
+                }
+                foreach(var x in generators)
+                {
+                    generatorsLB.Items.Add(x);
+                }
+                ConnectionString = value;
+            }
+        }
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -63,7 +74,7 @@ namespace TestConnect
             genCreate.ShowDialog();
             if (genCreate.createAvailable)
             {
-                generators.Add(genCreate.Generator);
+                generators.Add(genCreate.Generator as IRandomGenerator);
                 generatorsLB.Items.Add(genCreate.Generator.Name);
                 genCreate.Close();
             }

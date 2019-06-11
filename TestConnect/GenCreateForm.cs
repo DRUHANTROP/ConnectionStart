@@ -22,8 +22,8 @@ namespace TestConnect
         public bool createAvailable = false;
         private IRandomGenerator generator;
 
-        internal IRandomGenerator Generator { get => generator; set => generator = value; }
-
+        internal IRandomGenerator Generator { get => generator; set => generator = (IRandomGenerator)value; }
+        
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(textBox1.Text) || !string.IsNullOrWhiteSpace(textBox1.Text))

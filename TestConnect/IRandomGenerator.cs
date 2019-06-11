@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace RandomicGenerator
 {
-
     public interface IRandomGenerator
     {
         string Name { get; set; }
         ///<summary>
         ///Возвращает следующую случайную величину.
         /// </summary>
-        object Next();
+       object Next();
     }
 }
