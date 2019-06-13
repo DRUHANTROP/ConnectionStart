@@ -57,11 +57,12 @@
     </Compile>
     <Compile Include="IntGenerator.cs" />
     <Compile Include="IRandomGenerator.cs" />
-    <Compile Include="JsonAssemblyInitializer.cs" />
+    <Compile Include="MeGonnaBeRandomAssemblyInitializer.cs" />
     <Compile Include="LastNameGenerator.cs" />
     <Compile Include="MeGonnaBeRandom.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MeGonnaBeRandomConnectionStringBuilder.cs" />
     <Compile Include="MixedGenerator.cs" />
     <Compile Include="NameConnectionEditor.cs">
       <SubType>UserControl</SubType>
@@ -73,6 +74,7 @@
       <DependentUpon>PluginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GenCreateForm.resx">

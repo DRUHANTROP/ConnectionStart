@@ -15,8 +15,13 @@ namespace TestConnect
         public GenCreateForm()
         {
             InitializeComponent();
-            string[] arr = {"First Name","Last Name","Full Name","Integer","Date","Mixed (in progress)" };
-            comboBox1.Items.AddRange(arr);
+
+            comboBox1.Items.Clear();
+            foreach(IRandomGenerator generator in Utils.Generators)
+            {
+                comboBox1.Items.Add(generator.Name);
+            }
+            
             comboBox1.SelectedIndex = 0;
         }
         public bool createAvailable = false;
@@ -28,32 +33,15 @@ namespace TestConnect
         {
             if (!string.IsNullOrEmpty(textBox1.Text) || !string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                switch (comboBox1.SelectedIndex)
+                foreach(IRandomGenerator gen in Utils.Generators)
                 {
-                    case 0:
-                        Generator = new FirstNameGenerator();
-                        Generator.Name = textBox1.Text + "; First name";
+                    if(gen.Name.Equals(comboBox1.SelectedItem))
+                    {
+
+                        Generator = gen.Create();
+                        Generator.ColumnName = textBox1.Text;
                         break;
-                    case 1:
-                        Generator = new LastNameGenerator();
-                        Generator.Name = textBox1.Text + "; Last name";
-                        break;
-                    case 2:
-                        Generator = new FullNameGenerator();
-                        Generator.Name = textBox1.Text + "; Full name";
-                        break;
-                    case 3:
-                        Generator = new IntGenerator();
-                        Generator.Name = textBox1.Text + "; Integer";
-                        break;
-                    case 4:
-                        Generator = new DateGenerator();
-                        Generator.Name = textBox1.Text + "; Date";
-                        break;
-                    case 5:
-                        Generator = new MixedGenerator();
-                        Generator.Name = textBox1.Text + "; Mixed";
-                        break;
+                    }
                 }
                 createAvailable = true;
                 Hide();

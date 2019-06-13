@@ -13,7 +13,16 @@ namespace RandomicGenerator
         private Random rnd = new Random(DateTime.Now.Millisecond+1337);
         private string[] names = {"Mike","Rose","John","Andrew","Danny","Duke","James","Jotaro","Mitchell","Gordon","Kate","Bruce","Mapat","Lisa","Logan","Milena", };
 
-        public string Name { get; set; }
+        public string Name => "First name";
+
+        public Type Type => typeof(string);
+
+        public string ColumnName { get; set; }
+
+        public IRandomGenerator Create()
+        {
+            return new FirstNameGenerator();
+        }
 
         public object Next()
         {

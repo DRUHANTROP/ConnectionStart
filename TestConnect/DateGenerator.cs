@@ -11,7 +11,16 @@ namespace RandomicGenerator
     class DateGenerator : IRandomGenerator
     {
         Random r = new Random();
-        public string Name { get; set; }
+        public string Name => "Date";
+
+        public Type Type => typeof(DateTime);
+
+        public string ColumnName { get; set; }
+
+        public IRandomGenerator Create()
+        {
+            return new DateGenerator();
+        }
 
         public object Next()
         {
