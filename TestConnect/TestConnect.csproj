@@ -46,23 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateGenerator.cs" />
-    <Compile Include="FirstNameGenerator.cs" />
-    <Compile Include="FullNameGenerator.cs" />
     <Compile Include="GenCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenCreateForm.Designer.cs">
       <DependentUpon>GenCreateForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntGenerator.cs" />
-    <Compile Include="IRandomGenerator.cs" />
-    <Compile Include="JsonAssemblyInitializer.cs" />
-    <Compile Include="LastNameGenerator.cs" />
+    <Compile Include="MeGonnaBeRandomAssemblyInitializer.cs" />
     <Compile Include="MeGonnaBeRandom.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MixedGenerator.cs" />
+    <Compile Include="MeGonnaBeRandomConnectionStringBuilder.cs" />
     <Compile Include="NameConnectionEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -84,6 +78,12 @@
     <EmbeddedResource Include="PluginForm.resx">
       <DependentUpon>PluginForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Degenerators\Degenerators.csproj">
+      <Project>{77360361-8a07-4cc9-bf20-6320b65e0892}</Project>
+      <Name>Degenerators</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

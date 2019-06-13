@@ -1,12 +1,10 @@
-﻿using FastReport;
-using FastReport.Data;
+﻿using FastReport.Data;
 using FastReport.Data.ConnectionEditors;
 using FastReport.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
-using System.Text;
 
 
 namespace TestConnect
