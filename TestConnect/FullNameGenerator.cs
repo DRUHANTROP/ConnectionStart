@@ -14,7 +14,16 @@ namespace RandomicGenerator
         FirstNameGenerator fng = new FirstNameGenerator();
         LastNameGenerator lng = new LastNameGenerator();
 
-        public string Name { get; set; }
+        public string Name => "Full name";
+
+        public Type Type => typeof(string);
+
+        public string ColumnName { get; set; }
+
+        public IRandomGenerator Create()
+        {
+            return new FullNameGenerator();
+        }
 
         public object Next()
         {

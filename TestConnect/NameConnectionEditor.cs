@@ -19,36 +19,42 @@ namespace TestConnect
         }
         protected override string GetConnectionString()
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator[]));
-            generatorsLB.Items.Clear();
-            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+            
+            MeGonnaBeRandomConnectionStringBuilder result = new MeGonnaBeRandomConnectionStringBuilder();
+            result.RowCount = (int)numericUpDown1.Value;
+
+            List<string> generators = new List<string>();
+            foreach(object generator in generatorsLB.Items)
             {
-                formatter.Serialize(fs, generators.ToArray());
-                // connectionString;
+                generators.Add(generator.ToString());
             }
-            return "generators.xml";
+
+            result.Generators = generators.ToArray();
+
+
+            return result.ToString();
         }
         protected override void SetConnectionString(string value)
         {
-            XmlSerializer formatter = new XmlSerializer(typeof(IRandomGenerator));
-            using (FileStream fs = new FileStream("generators.xml", FileMode.OpenOrCreate))
+            if (!String.IsNullOrEmpty(value))
             {
-                try
+                MeGonnaBeRandomConnectionStringBuilder sb = new MeGonnaBeRandomConnectionStringBuilder();
+                sb.ConnectionString = value;
+
+                numericUpDown1.Value = sb.RowCount;
+
+                generatorsLB.Items.Clear();
+
+                foreach (string generator in sb.Generators)
                 {
-                    generators = new List<IRandomGenerator>(formatter.Deserialize(fs) as IRandomGenerator[]);
+                    generatorsLB.Items.Add(generator);
                 }
-                catch
-                {
-                    generators = new List<IRandomGenerator>();
-                }
-                foreach(var x in generators)
-                {
-                    generatorsLB.Items.Add(x);
-                }
-                ConnectionString = value;
+
             }
+
         }
 
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -63,15 +69,15 @@ namespace TestConnect
             }
             base.Dispose(disposing);
         }
-        public List<IRandomGenerator> generators = new List<IRandomGenerator>();
+        
         private void button1_Click(object sender, EventArgs e)
         {
             GenCreateForm genCreate = new GenCreateForm();
             genCreate.ShowDialog();
             if (genCreate.createAvailable)
             {
-                generators.Add(genCreate.Generator as IRandomGenerator);
-                generatorsLB.Items.Add(genCreate.Generator.Name);
+                
+                generatorsLB.Items.Add(genCreate.Generator.ColumnName + " : " + genCreate.Generator.Name);
                 genCreate.Close();
             }
 
@@ -87,69 +93,71 @@ namespace TestConnect
         {
             this.generatorsLB = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // generatorsLB
             // 
             this.generatorsLB.FormattingEnabled = true;
-            this.generatorsLB.Location = new System.Drawing.Point(12, 25);
+            this.generatorsLB.Location = new System.Drawing.Point(10, 19);
             this.generatorsLB.Name = "generatorsLB";
-            this.generatorsLB.Size = new System.Drawing.Size(184, 212);
+            this.generatorsLB.Size = new System.Drawing.Size(184, 173);
             this.generatorsLB.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 25);
+            this.button1.Location = new System.Drawing.Point(200, 19);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
+            this.button1.Size = new System.Drawing.Size(102, 21);
             this.button1.TabIndex = 1;
             this.button1.Text = "+ Add Generator";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Generators";
-            // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(202, 104);
+            this.numericUpDown1.Location = new System.Drawing.Point(200, 59);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(102, 20);
             this.numericUpDown1.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 85);
+            this.label2.Location = new System.Drawing.Point(200, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Count";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.generatorsLB);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Location = new System.Drawing.Point(8, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(320, 207);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Generators";
+            // 
             // NameConnectionEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.generatorsLB);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.Controls.Add(this.groupBox1);
             this.Name = "NameConnectionEditor";
-            this.Size = new System.Drawing.Size(336, 245);
+            this.Size = new System.Drawing.Size(336, 222);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -157,7 +165,6 @@ namespace TestConnect
 
         private System.Windows.Forms.ListBox generatorsLB;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label2;
     }

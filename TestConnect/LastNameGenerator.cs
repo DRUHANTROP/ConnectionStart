@@ -15,7 +15,16 @@ namespace RandomicGenerator
         private string[] syllable = { "ma", "lee", "cru", "ste", "ve", "la", "le", "si", "va", "mo", "mi", "lo", "su", "sa", "no", "ge", "tri", "co" };
         private string lastName;
 
-        public string Name { get; set; }
+        public string Name => "Last name";
+
+        public string ColumnName { get; set; }
+
+        public Type Type => typeof(string);
+
+        public IRandomGenerator Create()
+        {
+            return new LastNameGenerator();
+        }
 
         public object Next()
         {
