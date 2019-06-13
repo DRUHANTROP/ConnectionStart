@@ -65,7 +65,7 @@ namespace TestConnect
                 int count = sb.RowCount;
 
                 List<IRandomGenerator> generators = new List<IRandomGenerator>();
-                DataTable table = new DataTable("Table1");
+                DataTable table = new DataTable("Randomic Table");
 
                 foreach (string str in sb.Generators)
                 {
