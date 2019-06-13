@@ -13,7 +13,17 @@ namespace RandomicGenerator
         IRandomGenerator[] generators = { new IntGenerator(), new FirstNameGenerator(), new LastNameGenerator(), new FullNameGenerator(), new DateGenerator() };
         private Random r = new Random();
 
-        public string Name { get; set; }
+        public string Name => "Mixed";
+
+        public string ColumnName { get; set; }
+
+        public Type Type => typeof(object);
+
+        public IRandomGenerator Create()
+        {
+            return new MixedGenerator();
+        }
+
 
         public object Next()
         {
