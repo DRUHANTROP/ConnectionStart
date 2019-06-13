@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RandomicGenerator
+namespace Degenerators
 {
     [Serializable]
    public class DateGenerator : IRandomGenerator
@@ -23,7 +23,11 @@ namespace RandomicGenerator
 
         public object Next()
         {
-            return new DateTime(r.Next(2000,DateTime.Now.Year),r.Next(1,12),r.Next(1,28));
+            int month,day,year;
+            year = r.Next(1990, DateTime.Now.Year);
+            month = r.Next(1, 13);
+            day = r.Next(1, DateTime.DaysInMonth(year, month)+1);
+            return new DateTime(year,month,day);
         }
     }
 }

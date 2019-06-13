@@ -16,6 +16,7 @@ namespace TestConnect
         {
             InitializeComponent();
             Localize();
+            numericUpDown1.Value = 10;
         }
         protected override string GetConnectionString()
         {

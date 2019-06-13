@@ -1,4 +1,4 @@
-﻿using RandomicGenerator;
+﻿using Degenerators;
 using System.Collections.Generic;
 
 namespace TestConnect

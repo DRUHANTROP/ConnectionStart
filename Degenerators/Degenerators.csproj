@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastReport, Version=2019.2.19.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +47,7 @@
     <Compile Include="IntGenerator.cs" />
     <Compile Include="IRandomGenerator.cs" />
     <Compile Include="LastNameGenerator.cs" />
+    <Compile Include="LoremIpsumGenerator.cs" />
     <Compile Include="MixedGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

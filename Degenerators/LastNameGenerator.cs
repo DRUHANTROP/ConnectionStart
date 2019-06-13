@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace RandomicGenerator
+namespace Degenerators
 {
     [Serializable]
     public class LastNameGenerator : IRandomGenerator
     {
         private Random r = new Random(DateTime.Now.Millisecond);
-        private string[] syllable = { "ma", "lee", "cru", "ste", "ve", "la", "le", "si", "va", "mo", "mi", "lo", "su", "sa", "no", "ge", "tri", "co" };
+        private string[] syllable = { "ma", "lee", "cru", "ste", "ve", "la", "le", "si", "va", "mo", "mi", "lo", "su", "sa", "no", "ge", "tri", "co", "de", "da", "cro", "wo", "wi", "lli", "am" };
         private string lastName;
 
         public string Name => "Last name";

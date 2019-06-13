@@ -1,5 +1,5 @@
 ﻿using FastReport.Utils;
-using RandomicGenerator;
+using Degenerators;
 
 namespace TestConnect
 {
@@ -20,6 +20,7 @@ namespace TestConnect
                 Utils.Register(new LastNameGenerator());
                 Utils.Register(new IntGenerator());
                 Utils.Register(new MixedGenerator());
+                Utils.Register(new LoremIpsumGenerator());
 
             }
         }

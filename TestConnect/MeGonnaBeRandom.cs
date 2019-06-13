@@ -1,7 +1,7 @@
 ﻿using FastReport.Data;
 using FastReport.Data.ConnectionEditors;
 using FastReport.Utils;
-using RandomicGenerator;
+using Degenerators;
 using System;
 using System.Collections.Generic;
 using System.Data;

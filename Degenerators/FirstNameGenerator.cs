@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RandomicGenerator
+namespace Degenerators
 {
     [Serializable]
     public class FirstNameGenerator : IRandomGenerator
