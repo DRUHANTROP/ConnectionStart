@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 namespace Degenerators
 {
     [Serializable]
-    public class IntGenerator: IRandomGenerator
+    public class IdGenerator : IRandomGenerator
     {
-        private Random rnd = new Random(DateTime.Now.Millisecond);
-
-        public string Name => "Int";
+        private int i = 0;
+        public string Name => "Id";
 
         public Type Type => typeof(int);
 
@@ -19,14 +18,15 @@ namespace Degenerators
 
         public IRandomGenerator Create()
         {
-            return new IntGenerator();
+            return new IdGenerator();
         }
 
         public object Next()
         {
-            return rnd.Next(1000);
+            return ++i;
+
         }
 
-        
+
     }
 }

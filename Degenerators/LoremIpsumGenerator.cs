@@ -26,7 +26,7 @@ namespace Degenerators
         {
             List<string> lipsum = new List<string>();
             string result = "";
-            using (StreamReader sr = new StreamReader("LoremIpsum.txt"))
+            using (StreamReader sr = new StreamReader("../../../Degenerators/LoremIpsum.txt"))
             {
                 while (!sr.EndOfStream)
                     lipsum.Add(sr.ReadLine());

@@ -9,7 +9,7 @@ namespace Degenerators
     [Serializable]
     public class MixedGenerator : IRandomGenerator
     {
-        IRandomGenerator[] generators = { new IntGenerator(), new FirstNameGenerator(), new LastNameGenerator(), new FullNameGenerator(), new DateGenerator() };
+        IRandomGenerator[] generators = { new IdGenerator(), new FirstNameGenerator(), new LastNameGenerator(), new FullNameGenerator(), new DateGenerator() };
         private Random r = new Random();
 
         public string Name => "Mixed";

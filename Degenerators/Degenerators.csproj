@@ -44,12 +44,13 @@
     <Compile Include="DateGenerator.cs" />
     <Compile Include="FirstNameGenerator.cs" />
     <Compile Include="FullNameGenerator.cs" />
-    <Compile Include="IntGenerator.cs" />
+    <Compile Include="IdGenerator.cs" />
     <Compile Include="IRandomGenerator.cs" />
     <Compile Include="LastNameGenerator.cs" />
     <Compile Include="LoremIpsumGenerator.cs" />
     <Compile Include="MixedGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryGenerator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

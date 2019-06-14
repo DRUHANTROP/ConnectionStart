@@ -14,11 +14,12 @@ namespace TestConnect
                 isInitied = true;
                 RegisteredObjects.AddConnection(typeof(MeGonnaBeRandom), "Генератор случайных величин");
 
-                Utils.Register(new DateGenerator());
                 Utils.Register(new FirstNameGenerator());
-                Utils.Register(new FullNameGenerator());
                 Utils.Register(new LastNameGenerator());
-                Utils.Register(new IntGenerator());
+                Utils.Register(new FullNameGenerator());
+                Utils.Register(new IdGenerator());
+                Utils.Register(new SalaryGenerator());
+                Utils.Register(new DateGenerator());
                 Utils.Register(new MixedGenerator());
                 Utils.Register(new LoremIpsumGenerator());
 
