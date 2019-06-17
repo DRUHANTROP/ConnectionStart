@@ -12,6 +12,7 @@ namespace TestConnect
 {
     public partial class GenCreateForm : Form
     {
+        List<string> descs = new List<string>();
         public GenCreateForm()
         {
             InitializeComponent();
@@ -20,9 +21,11 @@ namespace TestConnect
             foreach(IRandomGenerator generator in Utils.Generators)
             {
                 comboBox1.Items.Add(generator.Name);
+                descs.Add(generator.Description);
             }
             
             comboBox1.SelectedIndex = 0;
+            DescLabel.Text = "Returns random name from list \n Example : Bruce";
         }
         public bool createAvailable = false;
         private IRandomGenerator generator;
@@ -57,6 +60,11 @@ namespace TestConnect
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             textBox1.BackColor = Color.White;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DescLabel.Text = descs[comboBox1.SelectedIndex];
         }
     }
 }

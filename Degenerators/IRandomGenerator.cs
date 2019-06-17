@@ -18,10 +18,16 @@ namespace Degenerators
         /// Returns unique name of this generator
         /// </summary>
         string Name { get; }
+
         /// <summary>
         /// Returns type of this generator
         /// </summary>
         Type Type { get; }
+
+        /// <summary>
+        /// Returns description of return data from this generator
+        /// </summary>
+        string Description { get; }
 
         /// <summary>
         /// Create a new copy of this generator 

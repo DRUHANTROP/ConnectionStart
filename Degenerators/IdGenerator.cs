@@ -16,6 +16,8 @@ namespace Degenerators
 
         public string ColumnName { get; set; }
 
+        public string Description => "Returns sequence like 1,2,3,4... \nExample : 1";
+
         public IRandomGenerator Create()
         {
             return new IdGenerator();

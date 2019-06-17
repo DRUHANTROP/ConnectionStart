@@ -19,6 +19,8 @@ namespace Degenerators
 
         public Type Type => typeof(string);
 
+        public string Description => "Returns randomly generated last name \nExample :" + Next();
+
         public IRandomGenerator Create()
         {
             return new LastNameGenerator();

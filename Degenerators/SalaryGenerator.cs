@@ -14,6 +14,8 @@ namespace Degenerators
 
         public Type Type =>typeof(int);
 
+        public string Description => "Returns average US salaries \n(it's just what google said me about it) \nExample :" + Next();
+
         public IRandomGenerator Create()
         {
             return new SalaryGenerator();

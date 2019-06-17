@@ -16,6 +16,8 @@ namespace Degenerators
 
         public string ColumnName { get; set; }
 
+        public string Description => "Returns random date \nExample :" + Next();
+
         public IRandomGenerator Create()
         {
             return new DateGenerator();

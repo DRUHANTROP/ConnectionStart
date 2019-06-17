@@ -18,6 +18,8 @@ namespace Degenerators
 
         public string ColumnName { get; set; }
 
+        public string Description => "Returns random name from list \nExample :"+Next();
+
         public IRandomGenerator Create()
         {
             return new FirstNameGenerator();

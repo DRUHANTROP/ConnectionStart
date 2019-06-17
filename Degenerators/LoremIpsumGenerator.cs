@@ -17,6 +17,8 @@ namespace Degenerators
 
         public Type Type => typeof(string);
 
+        public string Description => "Returns randomly generated \n\"lorem ipsum\" sentence \nExample :" + Next();
+
         public IRandomGenerator Create()
         {
             return new LoremIpsumGenerator();

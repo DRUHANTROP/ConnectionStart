@@ -19,6 +19,8 @@ namespace Degenerators
 
         public string ColumnName { get; set; }
 
+        public string Description => "Returns random pair of First Name + Last Name \nExample :" + Next();
+
         public IRandomGenerator Create()
         {
             return new FullNameGenerator();
